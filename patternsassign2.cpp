@@ -198,6 +198,15 @@ float areaofcircle(float radius){
     return 3.14159 * radius * radius;
 }
 
+bool checkprime(int n){
+    for(int i=2; i<n; i++){
+        if(n%i == 0){
+            return false; // Not prime
+        }
+    }
+    return true;
+}
+
 
  int main(){
     int n;
@@ -219,5 +228,19 @@ float areaofcircle(float radius){
     // KMtoMiles(n);
     // printAlldigiits(n);
     //  areaofcircle(radius);
+    /*if(checkprime(n)){
+        cout << n << " is a prime number." << endl;
+    }
+    else {
+        cout << n << " is not a prime number." << endl;
+    } */
+
+    for(int i=2; i<n; i++){
+        bool printallprime= checkprime(i);
+        if(printallprime){
+            cout << i << " ";
+            cout.flush(); // Ensure output is displayed immediately
+        }
+    }
     return 0;
  }
